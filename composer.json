@@ -16,6 +16,6 @@
     "minimum-stability": "dev",
     "require": {
       "php": ">=8.3",
-      "symfony/framework-bundle": "7.3.x-dev"
+      "symfony/framework-bundle": "7.2.*"
     }
 }
