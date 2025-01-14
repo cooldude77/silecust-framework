@@ -3,8 +3,9 @@
 namespace Silecust\Framework\Service\Component\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Contracts\EventDispatcher\Event;
 
-class TwigPreRenderEvent
+class TwigPreRenderEvent extends Event
 {
 
     /**

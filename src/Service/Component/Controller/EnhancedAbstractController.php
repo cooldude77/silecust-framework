@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnhancedAbstractController extends AbstractController
 {
-    const string TWIG_PRE_RENDER_EVENT = "TWIG_PRE_RENDER_EVENT";
+    const string TWIG_PRE_RENDER_EVENT = "silecust.twig.pre_render";
 
     public function __construct(private readonly EventDispatcherInterface $eventDispatcher)
     {
