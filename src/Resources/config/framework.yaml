@@ -1,0 +1,8 @@
+services:
+  Silecust\Framework\Service\Component\Controller\EnhancedAbstractController:
+    public: true
+    arguments:
+      - "@event_dispatcher"
+    tags: [ 'container.service_subscriber' ]
+    calls:
+      - [ setContainer, [ "@service_container" ] ]
