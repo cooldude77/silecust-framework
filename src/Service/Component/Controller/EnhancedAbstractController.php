@@ -2,8 +2,10 @@
 
 namespace Silecust\Framework\Service\Component\Controller;
 
+use Silecust\Framework\Service\Twig\TwigConstants;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class EnhancedAbstractController extends AbstractController
@@ -23,5 +25,11 @@ class EnhancedAbstractController extends AbstractController
         $this->eventDispatcher->dispatch($event, self::TWIG_PRE_RENDER_EVENT);
 
         return parent::render($event->getView(), $event->getParameters(), $event->getResponse());
+    }
+
+    public function setContentHeading(Request $request, string $contentHeading): void
+    {
+        $request->attributes->set(TwigConstants::UI_CONTENT_HEADING, $contentHeading);
+
     }
 }
